@@ -83,6 +83,6 @@ public class Main {
             System.out.println(list2.get(i).getClass());
         }
         System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-
+        List<Map<String, Object>> stressList = new ArrayList<>();
     }
 }
