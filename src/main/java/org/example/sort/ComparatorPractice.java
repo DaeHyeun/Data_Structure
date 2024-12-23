@@ -7,25 +7,19 @@ public class ComparatorPractice {
     public static void main(String[] args) {
         String[] arr = {"apple", "Banana", "melon", "grape"};
 
-        Arrays.sort(arr);
-        System.out.println("arr = " + Arrays.toString(arr));
+        // 1. Comparable을 사용하여 자연순서(알파벳순)로 정렬
+        Arrays.sort(arr);  // 문자열은 이미 Comparable을 구현하고 있음
+        System.out.println("Comparable 정렬 (알파벳순): " + Arrays.toString(arr));
 
-        Arrays.sort(arr, String.CASE_INSENSITIVE_ORDER);
-        System.out.println("arr = " + Arrays.toString(arr));
-
-        Arrays.sort(arr, new Descending());
-        System.out.println("arr = " + Arrays.toString(arr));
-    }
-
-    static class Descending implements Comparator {
-        public int compare(Object o1, Object o2) {
-            if (o1 instanceof Comparable && o2 instanceof Comparable) {
-                Comparable c1 = (Comparable) o1;
-                Comparable c2 = (Comparable) o2;
-                return c1.compareTo(c2) * -1;
+        // 2. Comparator를 사용하여 대소문자 구분 없이 정렬
+        Arrays.sort(arr, new Comparator<String>() {
+            @Override
+            public int compare(String str1, String str2) {
+                // 대소문자 구분 없이 비교
+                return str1.toLowerCase().compareTo(str2.toLowerCase());
             }
-            return -1;
-        }
+        });
+        System.out.println("Comparator 정렬 (대소문자 구분 없이): " + Arrays.toString(arr));
     }
 
 }
