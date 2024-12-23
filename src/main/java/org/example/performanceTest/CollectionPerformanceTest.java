@@ -28,6 +28,7 @@ public class CollectionPerformanceTest {
         Queue<String> arrayBlockingQueue = new ArrayBlockingQueue<>(100000);
         Queue<String> linkedBlockingQueue = new LinkedBlockingQueue<>();
         Queue<String> priorityQueue = new PriorityQueue<>();
+        Queue<String> linkedList1 =new LinkedList<>();
 
         // Stack 종류들
         Stack<String> stack = new Stack<>();
@@ -57,6 +58,7 @@ public class CollectionPerformanceTest {
         testQueuePerformance("ArrayBlockingQueue", arrayBlockingQueue);
         testQueuePerformance("LinkedBlockingQueue", linkedBlockingQueue);
         testQueuePerformance("PriorityQueue", priorityQueue);
+        testQueuePerformance("linkedList1",linkedList1);
 
         System.out.println("=== Stack Performance Test ===");
         testStackPerformance("Stack", stack);
