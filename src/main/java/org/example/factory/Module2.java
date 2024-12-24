@@ -1,15 +1,13 @@
 package org.example.factory;
 
+import lombok.AllArgsConstructor;
+
 import java.util.HashMap;
 
+@AllArgsConstructor
 class Module2 extends AbstractModule<HashMap<String, Integer>> {
     //field
     private HashMap<String, Integer> map;
-
-    // constructor
-    public Module2(HashMap<String, Integer> map) {
-        this.map = map;
-    }
 
     // abstrack class implement Map -> Map
     @Override

@@ -1,15 +1,14 @@
 package org.example.factory;
 
+import lombok.AllArgsConstructor;
+
 import java.util.HashMap;
 import java.util.Queue;
 
+@AllArgsConstructor
 public class Module5 extends AbstractModule<Queue<String>>{
 
     private Queue<String> stringQueue;
-
-    public Module5(Queue<String> stringQueue){
-        this.stringQueue = stringQueue;
-    }
 
     @Override
     public HashMap<String, Queue<String>> collect() {

@@ -1,16 +1,15 @@
 package org.example.factory;
 
+import lombok.AllArgsConstructor;
+
 import java.util.HashMap;
 import java.util.List;
 
+@AllArgsConstructor
 public class Module1 extends AbstractModule<List<Integer>> {
 
     private List<List<Integer>> listOfIntegerLists;  // List<List<Integer>> 타입으로 변경
 
-    //생성자
-    public Module1(List<List<Integer>> listOfIntegerLists) {
-        this.listOfIntegerLists = listOfIntegerLists;
-    }
 
     //추상클래스 구현 List -> Map으로 저장
     @Override
