@@ -62,14 +62,43 @@ public class Main {
         HashMap<String, Object> collectedData = collectionModule.collect();
         System.out.println("Combined Data: " + collectedData);
         System.out.println();
-        System.out.println("=========================================================");
+        System.out.println("==============================================================================================================================");
         System.out.println();
         for (String key : collectedData.keySet()) {
             Object value = collectedData.get(key);  // key에 대응하는 값을 가져옴
             System.out.print("Key: " + key + ", Value: " + value);
-            System.out.println("  ====   Class: " + value.getClass());
+            System.out.println("   ====   Class: " + value.getClass());
             System.out.println();
         }
+        System.out.println("==============================================================================================================================");
+        // HashMap -> Object -> ArratList -> get
+        System.out.println(((List<Integer>)collectedData.get("List1")).get(0));
+        // HashMap -> Object -> Stack -> get,peek,pop
+        System.out.println(((Stack<String>)collectedData.get("Stack Data")).get(0));
+        System.out.println(((Stack<String>)collectedData.get("Stack Data")).peek());//값만 가지고 온다
+        System.out.println(((Stack<String>)collectedData.get("Stack Data")).pop());//값 삭제
+        System.out.println(((Stack<String>)collectedData.get("Stack Data")).peek());
+        // HashMap -> Object -> HashMap -> get
+        System.out.println(((HashMap<String, String>)collectedData.get("Module3")).get("key4"));
+        // HashMap -> Object -> HashMap -> get
+        System.out.println(((HashMap<String, Integer>)collectedData.get("Module2")).get("c"));
+        // HashMap -> Object -> Queue -> peek,poll
+        System.out.println(((Queue<String>)collectedData.get("QueueData")).peek()); //값만 가지고 온다.
+        System.out.println(((Queue<String>)collectedData.get("QueueData")).poll()); //값을 가지고 오고 삭제된다.
+        System.out.println(((Queue<String>)collectedData.get("QueueData")).peek());
+        // HashMap -> Object -> Set -> size, Iterator, for
+        System.out.println(((Set<String>)collectedData.get("SetData")).size());
+        // Set의 이터레이터를 사용하여 순회
+        Iterator<String> iterator = ((Set<String>)collectedData.get("SetData")).iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        // for문으로 이터레이터 순회
+        /*for (String item : (Set<String>)collectedData.get("SetData")) {
+            System.out.println(item);
+        }*/
     }
+
 
 }
