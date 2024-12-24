@@ -3,11 +3,15 @@ package org.example.factory;
 import lombok.AllArgsConstructor;
 
 import java.util.HashMap;
+import java.util.List;
 
-@AllArgsConstructor
 class Module3 extends AbstractModule<HashMap<String, String>> {
     //필드
     private HashMap<String, String> map;
+
+    public Module3 (HashMap<String, String> parameter){
+        this.map = parameter;
+    }
 
 
     // abstrack class implement Map -> Map

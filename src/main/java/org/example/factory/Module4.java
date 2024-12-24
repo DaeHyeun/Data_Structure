@@ -3,12 +3,16 @@ package org.example.factory;
 import lombok.AllArgsConstructor;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
-@AllArgsConstructor
 public class Module4 extends AbstractModule<Set<String>> {
 
     private Set<String> stringSet; // Set<String> 타입의 필드
+
+    public Module4 (Set<String> parameter){
+        this.stringSet = parameter;
+    }
 
 
     @Override
