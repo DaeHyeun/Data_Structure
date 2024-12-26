@@ -23,9 +23,18 @@ public class Apple {
         ================================================================================================================================================================================== */
         public int solution(int k, int m, int[] score) {
             int answer = 0;
-            System.out.println("k : " +k);
-            System.out.println("m : " + m);
-            System.out.println(Arrays.toString(score));
+            // Sort the score array in descending order
+            Arrays.sort(score);
+
+            // Process the apples from the highest score
+            int n = score.length;
+
+            // Iterate over the apples and group them into boxes of size 'm'
+            for (int i = n - m; i >= 0; i -= m) {
+                // The price of each box is determined by the lowest score in the box
+                int boxPrice = score[i] * m;
+                answer += boxPrice;
+            }
 
             return answer;
         }
