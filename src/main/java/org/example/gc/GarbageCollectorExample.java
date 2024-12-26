@@ -1,8 +1,6 @@
 package org.example.gc;
 
-import lombok.Getter;
 
-@Getter
 class LargeObject {
     private String name;
     private int[] data;
